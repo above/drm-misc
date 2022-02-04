@@ -172,6 +172,17 @@ config TINYDRM_REPAPER
 
 	  If M is selected the module will be called repaper.
 
+config TINYDRM_SSD1362
+        tristate "DRM support for Solomon Systech SSD1362 based display panels"
+        depends on DRM && SPI
+        select DRM_KMS_HELPER
+        select DRM_GEM_SHMEM_HELPER
+        help
+          DRM driver for the Solomon Systech SSD1362 display panel:
+          2.05" Futaba OLED Panel (ELW2106AA)
+
+          If M is selected the module will be called ssd1362.
+
 config TINYDRM_ST7586
 	tristate "DRM support for Sitronix ST7586 display panels"
 	depends on DRM && SPI
