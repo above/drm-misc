@@ -451,6 +451,8 @@ patternProperties:
     description: Freescale Semiconductor
   "^fujitsu,.*":
     description: Fujitsu Ltd.
+  "^futaba,.*":
+    description: Futaba Corporation
   "^fxtec,.*":
     description: FX Technology Ltd.
   "^gardena,.*":

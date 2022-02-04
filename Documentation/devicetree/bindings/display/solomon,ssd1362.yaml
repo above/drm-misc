@@ -1,0 +1,66 @@
+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+%YAML 1.2
+---
+$id: http://devicetree.org/schemas/display/solomon/ssd1362.yaml#
+$schema: http://devicetree.org/meta-schemas/core.yaml#
+
+title: Solomon Systech SSD1362 OLED Controller DRM Framebuffer
+
+maintainers:
+  - Glenn Kennard <glenn.kennard@above.se>
+
+description:
+  This binding is for display panels using a Solomon Systech SSD1362 controller in SPI mode
+
+properties:
+  compatible:
+    enum:
+      futaba,elw2106aa
+  dc-gpios:
+    maxItems: 1
+    description: Display data/command selection (D/C#)
+  fr-gpios:
+    maxItems: 1
+    description: Vertical sync interrupt line (FR synchronization)
+  reset-gpios:
+    maxItems: 1
+  boost->gpios:
+    maxItems: 1
+    description: External OLED supply boost regulator enable/disable, omit if fixed rail
+  height:
+    $ref: /schemas/types.yaml#/definitions/uint32
+    default: 64
+    description:
+      Height in pixels of screen driven by the controller
+  width:
+    $ref: /schemas/types.yaml#/definitions/uint32
+    default: 256
+    description:
+      Width in pixels of screen driven by the controller
+  rotate:
+    $ref: /schemas/types.yaml#/definitions/uint32
+    default: 0
+    description:
+      Rotation 0/180 degrees of display driven by the controller
+
+required:
+  - compatible
+  - reg
+  - dc-gpios
+  - reset-gpios
+
+examples:
+  - |
+    spi1 {
+            ssd1362@0 {
+                    compatible = "futaba,elw2106aa";
+                    reg = <0>;
+                    rotate = <0>;
+                    width = <256>;
+                    height = <64>;
+                    boost-gpios = <&pioA PIN_PA20 GPIO_ACTIVE_HIGH>;
+                    reset-gpios = <&pioA PIN_PC9 GPIO_ACTIVE_HIGH>;
+                    dc-gpios = <&pioA PIN_PC5 GPIO_ACTIVE_HIGH>;
+                    fr-gpios = <&pioA PIN_PC8 GPIO_ACTIVE_HIGH>;
+            };
+    };
