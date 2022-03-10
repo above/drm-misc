@@ -6404,7 +6404,7 @@ DRM DRIVER FOR SOLOMON SYSTECH SSD1362 PANELS
 M:	Glenn Kennard <glenn.kennard@above.se>
 S:	Maintained
 F:	Documentation/devicetree/bindings/display/solomon,ssd1362.yaml
-F:	drm/drivers/gpu/drm/tiny/ssd1362.c
+F:	drm/drivers/gpu/drm/solomon/ssd1362.c
 
 DRM DRIVER FOR SITRONIX ST7586 PANELS
 M:	David Lechner <david@lechnology.com>

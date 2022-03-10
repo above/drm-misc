@@ -29,3 +29,15 @@ config DRM_SSD130X_SPI
 	  Say Y here if the SSD130x OLED display is connected via SPI bus.
 
 	  If M is selected the module will be called ssd130x-spi.
+
+config DRM_SSD1362
+	tristate "DRM support for Solomon Systech SSD1362 based display panels"
+	depends on DRM && SPI
+	select DRM_KMS_HELPER
+	select DRM_GEM_SHMEM_HELPER
+	help
+	  DRM driver for the Solomon Systech SSD1362 OLED display panel controller.
+	  Supported panels:
+	    2.05" Futaba OLED Panel (ELW2106AA)
+
+	  If M is selected the module will be called ssd1362.
