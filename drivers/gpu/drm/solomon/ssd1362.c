@@ -17,7 +17,7 @@
 #include <drm/drm_gem.h>
 #include <drm/drm_fb_helper.h>
 #include <drm/drm_gem_shmem_helper.h>
-#include <drm/drm_gem_farmebuffer_helper.h>
+#include <drm/drm_gem_framebuffer_helper.h>
 #include <drm/drm_gem_atomic_helper.h>
 #include <drm/drm_simple_kms_helper.h>
 #include <drm/drm_damage_helper.h>
