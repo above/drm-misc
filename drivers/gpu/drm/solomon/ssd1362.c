@@ -17,7 +17,7 @@
 #include <drm/drm_gem.h>
 #include <drm/drm_fb_helper.h>
 #include <drm/drm_gem_shmem_helper.h>
-#include <drm/drm_gem_framebuffer_helper.h>
+#include <drm/drm_gem_farmebuffer_helper.h>
 #include <drm/drm_gem_atomic_helper.h>
 #include <drm/drm_simple_kms_helper.h>
 #include <drm/drm_damage_helper.h>
@@ -262,8 +262,8 @@ static void set_window(struct ssd1362 *s, struct drm_rect *rect)
 static void update(struct ssd1362 *s, struct drm_plane_state *state, struct drm_rect *rect)
 {
 	struct drm_framebuffer *fb = state->fb;
-	struct dma_buf_map map[DRM_FORMAT_MAX_PLANES];
-	struct dma_buf_map map_data[DRM_FORMAT_MAX_PLANES];
+	struct iosys_map map[DRM_FORMAT_MAX_PLANES];
+	struct iosys_map map_data[DRM_FORMAT_MAX_PLANES];
 	void *vaddr;
 	size_t len;
 	int ret;
